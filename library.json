@@ -12,10 +12,8 @@
     "maintainer": true
   },
   "version": "0.0.1",
-  "license": "MIT",
-  "frameworks": "arduino y Cloudino",
-  "platforms": "*",
-  "dependencies": {
-    "https://github.com/AlfredoMunguia/ANNC": "*"
-  }
+  "examples": "examples/*/*.ino"
+  "frameworks": "arduino",
+  "platforms": "*"
+
 }
