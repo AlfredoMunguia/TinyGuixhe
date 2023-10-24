@@ -57,7 +57,7 @@ void NeuralNetwork<T>::init(vector<int> architecture, T learningRate /*= LEARNIN
       _W.push_back(new MatrixXXT(architecture[i], architecture[i+1]));
 
       _D.push_back(new MatrixXXT(architecture[i+1], architecture[i+1]));
-      _B.push_back(new MatrixXXT(architecture[i+1],nL));
+      __B.push_back(new MatrixXXT(architecture[i+1],nL));
 
       // initialize weights and bias
       _W.back()->setRandom();
@@ -72,6 +72,13 @@ void NeuralNetwork<T>::init(vector<int> architecture, T learningRate /*= LEARNIN
   mConfusion = new MatrixXXT(architecture.back(), architecture.back());
   mConfusion->setZero();
 }
+
+//template <typename T>
+//void setParameters(vector<int> architecture, T learningRate/*= LEARNING_RATE*/, Activation activation/*= TANH*/, vector<RowVectorXT*>& b, vector<MatrixXXT*>& W) {
+//    init(architecture, learningRate, activation);
+//    _b = b;
+//    _W = W;
+//}
 
 
 template <typename T>
@@ -116,9 +123,9 @@ template <typename T> void NeuralNetwork<T>::forward(RowVectorXT& input) {
 
 template <typename T> void NeuralNetwork<T>::backward() {
   int L = mArchitecture.size() - 2;
-  *_B[L]       =  *_D[L];           
+  *__B[L]       =  *_D[L];           
   for (int i = L - 1; i >= 0; i--){
-    *_B[i]     =   ( *_D[i] * *_W[i+1]) * *_B[i+1];      
+    *__B[i]     =   ( *_D[i] * *_W[i+1]) * *__B[i+1];      
   }  
 }
 
@@ -381,9 +388,9 @@ bool NeuralNetwork<T>::load(const char* filename) {
       int row = 0;
       while (getline(ss, value, '\n'))
         if (!value.empty()) {
-          stringstream word(value);
+          stringstream wordd(value);
           int col = 0;
-          while (getline(word, value, ' '))
+          while (getline(wordd, value, ' '))
             if (!value.empty())
               mWeights[i]->coeffRef(row, col++) = atof(value.c_str());
           row++;

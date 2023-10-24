@@ -1,4 +1,6 @@
-#include <Eigen/Eigen> 
+#include <ArduinoEigen.h>
+#include <ArduinoEigenDense.h>
+#include <ArduinoEigenSparse.h>
 #include <vector> 
 #include <iostream> 
 #include <fstream> 
@@ -41,11 +43,13 @@ namespace nn{
     // neurons' output errors    
     // vector<RowVectorXT*> _delta;
     vector<RowVectorXT*> _b;
+    //vector<RowVectorXT*> bias;
     
     // connections' weights
     vector<MatrixXXT*> _W;
+    //vector<MatrixXXT*> pesos;
     vector<MatrixXXT*> _D;
-    vector<MatrixXXT*> _B;
+    vector<MatrixXXT*> __B;
 
 
     MatrixXXT _Lambda;
@@ -69,6 +73,11 @@ namespace nn{
     ~NeuralNetwork();    
 
     void init(vector<int> architecture,T learningRate = LEARNING_RATE,Activation = TANH);
+    void setParameters(vector<int> architecture, T learningRate = LEARNING_RATE, Activation = TANH, vector<RowVectorXT*>& b, vector<MatrixXXT*>& W) {
+        init(architecture, learningRate, activation);
+        _b = b;
+        _W = W;
+    }
 
     // load from file
     bool load(const char* file);
@@ -136,7 +145,7 @@ namespace nn{
 
 
 
-#include "../src/nn/NeuralNetwork.cpp"
+#include "TinyGuixhe/src/nn/NeuralNetwork.cpp"
 
 #endif
   
