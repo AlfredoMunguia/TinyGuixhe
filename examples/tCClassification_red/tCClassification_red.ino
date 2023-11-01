@@ -31,7 +31,7 @@ if (openfile == true){
       Serial.print(y);
       Serial.println(") en la iA");      
 
-      clasification(x,y);   //Classification.h uses Neuralnetwork.h
+      clasification(x,y);  //Classification.h uses Neuralnetwork.h
       Serial.print("Prediction: (");
       Serial.print(x);
       Serial.print(",");
