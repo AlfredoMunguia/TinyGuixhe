@@ -11,7 +11,7 @@
     "url": "https://github.com/AlfredoMunguia",
     "maintainer": true
   },
-  "version": "0.0.1",
+  "version": "1.0.2",
   "examples": "examples/*/*.ino"
   "frameworks": "arduino",
   "platforms": "*"
