@@ -1,0 +1,19 @@
+{
+  "name": "TinyGuixhe",
+  "keywords": "nn,NeuralNetwork",
+  "description": "Guixhe (a C++ template library for NeuralNetwork) for Arduino and Cloudino",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlfredoMunguia/TinyGuixhe.git"
+  },
+  "authors": {
+    "name": "Daniel Cervantes y Alfredo Munguia",
+    "url": "https://github.com/AlfredoMunguia",
+    "maintainer": true
+  },
+  "version": "1.0.1",
+  "examples": "examples/*/*.ino"
+  "frameworks": "arduino",
+  "platforms": "*"
+
+}
