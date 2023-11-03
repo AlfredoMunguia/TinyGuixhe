@@ -1,8 +1,7 @@
 #include <iostream>
 #include <time.h>
 #include <ctime>
-#include "Classification.h" // library Tinyguixhe
-#include "NeuralNetwork.h"  // library Tinyguixhe
+#include <TinyGuixhe.h>
 
 //NeuralNetwork net;  //uses Neuralnetwork.h as net
 const char* pnamefile = "C:Users/alfredo.munguia.INFOTEC/Documents/Arduino/ANNC1/tCClassification/data/params.txt";  //define path tranin red
