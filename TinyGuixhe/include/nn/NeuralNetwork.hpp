@@ -113,8 +113,9 @@ public:
         }
     }
 
- void setParameters(std::vector<int> architecture, float learningRate,std::vector<RowVectorXT*>& b, std::vector<MatrixXXT*>& W){
+ void setParameters(std::vector<int> architecture, float learningRate,NeuralNetwork::Activation activation, std::vector<RowVectorXT*>& b, std::vector<MatrixXXT*>& W){
         init(architecture, learningRate);
+        mActivation   = activation;
         _b = b;
         _W = W;
      }
