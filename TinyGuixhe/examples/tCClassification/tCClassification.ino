@@ -6,7 +6,6 @@
 typedef Matrix<float,Dynamic,Dynamic> MatrixXXf;
 typedef Matrix<float,1,Dynamic> RowVectorXT;
 typedef Matrix<float,Dynamic,Dynamic> MatrixXXT;
-
 void clasification(Matrix<float,1,Dynamic> &X_test, Matrix<float,1,Dynamic> &Y_test);
 double unary(float x);
 
